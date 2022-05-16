@@ -1,0 +1,403 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#menu{
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;    
+    background-color:#303030;
+    color: whitesmoke;
+    font-family: 'Gentium Book Basic';
+}
+
+#menu div{
+    margin-right: 5%;
+    font-size: 30px;
+}
+
+#menu div a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#menu div a:hover{
+    color:black;
+}
+
+#image {
+    height: 550px;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1614791962365-7590111b1b1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80');
+    background-position: 32% 65%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#image h1{
+    color:black;
+    font-size:80px;
+    padding-left:30%;
+    padding-right:30%;
+    padding-bottom:2%;
+    text-align:center;
+}
+
+/* The Search Library section where you can search for book titles and get the results */
+
+#search{
+    width: 100%;
+    height: 400px;
+    background-image: linear-gradient(180deg,
+    rgba(0,0,0,0.3) 0%,
+    rgba(0,0,0,0.8) 100%),
+    url('https://wallpaperaccess.com/full/3876166.jpg');
+    position: relative;
+}
+
+#search h1{
+    width: 50%;
+    height: 20%;
+    position: absolute;
+    left:25%;
+    top:5%;
+    font-family:'Gentium Book Basic';
+    font-size:40px;
+    color:whitesmoke;
+    text-align: center;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+}
+
+#search div{
+    height: 10%;
+    width:50%;
+    position:absolute;
+    left:28%;   
+    top:40%;
+}
+
+#search div input[type=text]{
+    width:80%;
+    font-size: 25px;
+    height:85%;
+    font-family: 'Gentium Book Basic';
+    color:#303030;
+}
+
+#search div button{
+    width: 12%;
+    font-family: 'Gentium Book Basic';
+    height: 100%;
+    font-size:25px;
+    border:2px solid black;
+    border-radius: 3px;
+    margin-left: 1%;
+    background-color:whitesmoke;
+    color:#303030;
+    transition: background-color 0.2s, 
+    color 0.3s;
+}
+
+#search div button:hover{
+    background-color:#303030;
+    color: whitesmoke;
+}
+
+/* The results section where the books are displayed. */
+
+
+#results{
+    width:100%;
+    height: 1600px;
+}
+
+#book-results{
+width: 100%;
+height: 1500px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+}
+
+.card-container{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color:lightgray;
+    width: 30%;
+    height: 320px;
+    font-family:'Gentium Book Basic';
+    align-self: center;
+}
+
+.card-container img{
+    border-radius: 3px;
+    height: 57%;
+    width: 40%;
+    position: relative;
+    bottom:45%;
+    left:2%;
+}
+
+.book-title{
+    border-radius: 3px;
+    height: 50px;
+    width: 45%;    
+    position:relative;
+    left:47%;
+    top:15%;
+    text-align: center;
+}
+
+.book-author{
+    border-radius: 3px;
+    height: 40px;
+    width: 45%;
+    position: relative;
+    left:47%;
+    bottom:65%;
+    text-align: center;
+}
+
+.book-description{
+    border-radius: 3px;
+    margin-left: 2%;
+    width: 93%;
+    height: 100px;
+    padding:1%;
+    position: relative;
+    top:50%;
+    overflow: auto;
+    text-align: justify;
+    transition: transform .2s;
+}
+
+.book-description::-webkit-scrollbar{
+    display: none;
+}
+
+.book-description:hover{
+    transform: scale(1.2);
+    border:1px solid black;
+    background-color: lightgrey;
+}
+
+
+/* The contact section */
+
+#contact{
+    
+    width: 100%;
+    height: 200px;
+    font-family: 'Gentium Book Basic';
+    background-color: #303030;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contact div{
+    width: 50%;
+    text-align: center;
+}
+
+#contact div h4{
+    font-size: 35px;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+}
+
+#contact div p{
+    font-size:22px;
+}
+
+/* Media querries */
+@media (max-width:1325px){
+    #search div button{
+        width: 15%;
+    }
+}
+@media (max-width:1100px){
+    #search div button{
+        width: 16%;
+        font-size: 23px;
+    }
+    .book-author{
+        position:relative;
+        bottom:66%;
+    }
+
+    .book-title{
+        position: relative;
+        top:10%;
+    }
+}
+
+@media (max-width:930px){
+    #search div button{
+        font-size: 22px;
+        width: 17%;
+    }
+
+    #search div input[type=text]{
+        width:60%;
+    }
+
+    .card-container{
+        font-size:15px;
+    }
+}
+
+@media (max-width:850px){
+    #search div button{
+        font-size: 20px;
+        width: 18.5%;
+    }
+
+    #search div{
+        position: absolute;
+        left:30%;
+    }
+
+    .book-author{
+        position:relative;
+        bottom:68%;
+    }
+
+    .book-title{
+        position: relative;
+        top:7%;
+    }
+}
+
+@media(max-width:750px){
+    #search div button{
+        font-size: 19px;
+        width: 19%;
+    }
+
+    .card-container{
+        font-size:14px;
+    }
+}
+
+@media(max-width:700px){
+    #results, #book-results{
+        height: 2000px;
+    }
+
+    .card-container{
+        flex-basis: 40%;
+    }
+
+    #search h1{
+        font-size:30px;
+    }
+
+    #image h1{
+        font-size:60px;
+    }
+}
+
+@media(max-width:650px){
+    #menu div{
+        font-size: 25px;
+    }
+    #search div input[type=text]{
+        font-size: 20px;
+    }
+
+    #search div button{
+        width: 21%;
+    }
+
+    #contact div h4{
+        font-size:25px;
+    }
+
+    #contact div p{
+        font-size:20px;
+    }
+}
+
+@media(max-width:600px){
+    #search div button{
+        width: 25%;
+    }
+
+    #results, #book-results{
+        height: 4000px;
+    }
+
+    .card-container{
+        flex-basis: 80%;
+        font-size:16px;
+    }
+}
+
+@media(max-width:500px){
+    #search div button{
+        width: 29%;
+    }
+
+    #menu {
+        justify-content: center;
+    }
+}
+
+@media(max-width:450px){
+    #search div button{
+        width: 29%;
+    }
+}
+
+@media(max-width:400px){
+    #search div button{
+        font-size: 15px;
+    }
+
+    #contact div h4, #menu div{
+        font-size: 20px;
+    }
+
+    #image h1{
+        font-size:50px;
+    }
+
+}
+
+@media(max-width:350px){
+    #search div button{
+        font-size: 13px;
+        width: 31%;
+    } 
+
+    #search h1{
+        font-size: 25px;
+    }
+
+    #contact div h4{
+        font-size:20px;
+    }
+
+    #contact div p{
+        font-size:15px;
+    }
+
+    .card-container{
+        font-size:14px;
+    }
+}
+    
